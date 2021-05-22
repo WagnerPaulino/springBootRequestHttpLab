@@ -26,6 +26,7 @@ class AgenciaGroupUseCase(@Autowired val restTemplate: RestTemplate) {
                 }
             }
         })
+        group.entries.forEach({ (_, value) -> value.sortBy { it.city } })
         return group
     }
 }
